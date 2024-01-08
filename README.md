@@ -9,6 +9,8 @@ npm install
 ```
 npm start
 ```
+# Postman Collection 
+[https://elements.getpostman.com/redirect?entityId=11318463-956ffdc0-0085-4f51-b184-7421a1a64abb&entityType=collection]
 
 # Endpoints Documentation
 

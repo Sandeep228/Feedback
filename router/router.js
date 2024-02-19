@@ -7,7 +7,8 @@ const {
    getUserFeedback,
    deleteFeedbackById,
    updateFeedbackByUser,
-   getAllFeedback
+   getAllFeedback,
+   updateCheck
 } = require("../controller/controller");
 const isAuthenticated = require("../middleware/verify-token");
 
@@ -22,6 +23,7 @@ router.get('/get-my-feedback',isAuthenticated,getUserFeedback);
 router.delete('/delete-feedback',isAuthenticated,deleteFeedbackById);
 router.put('/update-my-feedback',isAuthenticated,updateFeedbackByUser);
 router.get('/get-all-feedback',isAuthenticated,getAllFeedback);
+router.put('/toggle-feedback-completion',isAuthenticated,updateCheck);
 
 
 module.exports = router;

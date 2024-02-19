@@ -195,6 +195,19 @@ const getAllFeedback = async (req, res) => {
   }
 };
 
+const updateCheck  =async (req,res) => {
+  try {
+    const { feedbackId, completionStatus } = req.body;
+    const updatedFeedback = await Feedback.updateCheckStatus(feedbackId, completionStatus);
+    res.status(200).json({ message: 'Check status updated successfully', data: updatedFeedback });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+
+}
+
+
 module.exports = {   
   hello,
 login,
@@ -203,5 +216,6 @@ addFeedback,
 getUserFeedback,
 deleteFeedbackById,
 updateFeedbackByUser,
-getAllFeedback
+getAllFeedback,
+updateCheck
 };

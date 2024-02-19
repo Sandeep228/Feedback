@@ -25,7 +25,12 @@ const UserSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'FeedBack'
       }
-    ]
+    ],
+    complete:{
+      type: Boolean, 
+      default: false, 
+    }
+
 });
 
 const User = mongoose.model('User', UserSchema);

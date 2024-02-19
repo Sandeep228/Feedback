@@ -66,7 +66,8 @@ const addFeedback = async (req, res) => {
       const {
         customerName,
         feedback,
-        date
+        date,
+        complete
       } = req.body;
   
       const user = await User.findOne({ email: req.user.email });
@@ -78,6 +79,7 @@ const addFeedback = async (req, res) => {
         feedback,
         customerName,
         date,
+        complete
       });
   
       await newFeedbackReport.save();

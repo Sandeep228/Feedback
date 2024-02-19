@@ -18,7 +18,10 @@ const FeedBackSchema = new mongoose.Schema({
     type: Date,
     required: true,
   },
- 
+  complete:{
+    type: Boolean, 
+    default: false, 
+  }
 });
 
 const FeedBack = mongoose.model("FeedBack", FeedBackSchema);
